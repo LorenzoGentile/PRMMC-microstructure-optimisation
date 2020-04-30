@@ -8,3 +8,5 @@
 
 [Gentile, L., Giugliano, D., Cestino, E., Frulla, G., & Minisci, E. (2018, June). Optimisation based analysis of the effect of particle spatial distribution on the elastic behaviour of PRMMC. *In 6th European Conference on Computational Mechanics and 7th European Conference on Computational Fluid Dynamics 2018.*](https://www.researchgate.net/publication/325822333_Optimisation_based_analyisis_of_the_effect_of_particle_spatial_distribution_on_the_elastic_behaviour_of_PRMMCs)
 
+Authors: Lorenzo Gentile
+         Dario Giugliano
