@@ -53,7 +53,7 @@ if max(C)<=0.05
         fido = fopen('YM_calc.txt');
         E=fscanf(fido,'%f');
         fclose(fido);
-        E=-E/1e4
+        E=-E/1e4;
         pause(0.1)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         delete('abaqus.rpy','abaqus.rpy.1','PBCx.com','PBCx.sim','PBCx.odb','PBCx.dat','PBCx.prt','PBCx.inp','PBCx.msg','PBCx.sta');

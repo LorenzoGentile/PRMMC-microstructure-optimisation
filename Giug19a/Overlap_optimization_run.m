@@ -1,4 +1,4 @@
-clear all
+clear all;
 global delta;
 global r;
 global N_part;
@@ -9,15 +9,15 @@ global LB;
 % Calculation of sphere radius
 list=[2,4,6,8,10];
 volumes=[0.1,.14,.25];
-for V=1:1
-    for N=1:19           
+for V=1:size(volumes,2)
+    for N=1:size(list,2)      
         x_min=0;
         x_max=10;
         y_min=0;
         y_max=10;
         z_min=0;
         z_max=10;
-        %    Vf=.07;
+       
         Vf=volumes(V);
         Volume=(x_max-x_min)*(y_max-y_min)*(z_max-z_min);
         
@@ -27,7 +27,7 @@ for V=1:1
         N_var=3*N_part;
         LB(1,1:N_var)=r+delta;
         UB(1,1:N_var)=10-(r+delta);
-        diff=-.1;
+        
         iterazioni=0;
         index_min=1;
         minimo=0;
@@ -106,40 +106,40 @@ for V=1:1
         valori_finali(iterazioni,1)=fval_ga;
         valori_finali(iterazioni,2)=Bests_values(1)
         minimo=fval_ga;
-        
-        %end   % while end
-        
-        
-        
-        
-        
+     
         %____________________________________________________________________________
         % Young Modulus evaluation
         %___________________________________________________________________________
         
         
         
-%         for g=1:N_part
-%             pos(g,1:3)=X_ga(1+3*(g-1):3+3*(g-1));
-%         end
-%         gg=1;
-%         for g=1:N_part-1
-%             for h=g+1:N_part
-%                 dist_x=(pos(h,1)-pos(g,1)).^2;
-%                 dist_y=(pos(h,2)-pos(g,2)).^2;
-%                 dist_z=(pos(h,3)-pos(g,3)).^2;
-%                 
-%                 C(gg,1)=-sqrt( dist_x+ dist_y + dist_z)+2*r+delta;
-%                 gg=gg+1;
-%             end
-%         end
+        for g=1:N_part
+            pos(g,1:3)=X_ga(1+3*(g-1):3+3*(g-1));
+        end
+        gg=1;
+        for g=1:N_part-1
+            for h=g+1:N_part
+                dist_x=(pos(h,1)-pos(g,1)).^2;
+                dist_y=(pos(h,2)-pos(g,2)).^2;
+                dist_z=(pos(h,3)-pos(g,3)).^2;
+                
+                C(gg,1)=-sqrt( dist_x+ dist_y + dist_z)+2*r+delta;
+                gg=gg+1;
+            end
+        end
          constraint=max(C);
+         
+%         Uncomment thisif Abaqus is available
+%         
 %         if max(C)<=0.01
 %             E=Abaqus_run(X_ga)
 %         else
 %             E=0;
 %         end
          filename=sprintf('WSpart%d-Vf%d.mat',N_part,Vf);
+         
+%         Uncomment thisif Abaqus is available
+
 %         save(filename,'E','X_ga','constraint','fval_ga')
           save(filename,'E','X_ga','constraint','fval_ga')        
 %         

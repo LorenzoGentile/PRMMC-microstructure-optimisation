@@ -1,0 +1,25 @@
+Analysis Type: STRICT_SHAKEDOWN
+Max Number of Increments: 300
+SD_Convergence: 0.0001
+Dimensionality: THREE_D
+Number of Applied Loads: 2
+Number of Load Instances: 2
+Load: P100
+SCALABLE
+0.00000
+1.00000
+Load: Temp
+SCALABLE
+0.00000
+0.00000
+
+Material Properties:
+Number of materials: 2
+
+Material: MATERIAL-MATRICE
+Temperature Independent Modulus
+Temperature Independent Yield Stress
+
+Material: MATERIAL-SFERE
+Temperature Independent Modulus
+Temperature Independent Yield Stress
