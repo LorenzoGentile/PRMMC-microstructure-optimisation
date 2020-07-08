@@ -112,7 +112,7 @@ for V=1:size(volumes,2)
         %___________________________________________________________________________
         
         
-        
+        E = 0;
         for g=1:N_part
             pos(g,1:3)=X_ga(1+3*(g-1):3+3*(g-1));
         end
@@ -134,7 +134,7 @@ for V=1:size(volumes,2)
 %         if max(C)<=0.01
 %             E=Abaqus_run(X_ga)
 %         else
-%             E=0;
+#             E=0;
 %         end
          filename=sprintf('WSpart%d-Vf%d.mat',N_part,Vf);
          
